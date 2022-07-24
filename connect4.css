@@ -1,0 +1,81 @@
+/* game board table */
+
+:root {
+  --drop: 350px;
+}
+
+#board td {
+  width: 50px;
+  height: 50px;
+  border: solid 1px #666;
+  border-radius: 3px;
+  position: relative;
+}
+
+#title {
+  font-size: 300%;
+}
+
+.text {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+}
+
+#board {
+  margin-left: auto;
+  margin-right: auto;
+}
+/* pieces are div within game table cells: draw as colored circles */
+
+.piece {
+  width: 49px;
+  height: 49px;
+  border-radius: 50%;
+  margin-top: auto;
+  margin-bottom: auto;
+  position: absolute;
+  animation-duration: 1s;
+  animation-name: slidein;
+  transform: translate(1%, -50%);
+}
+
+@keyframes slidein{
+  from{margin-top: var(--drop);}
+  to {margin-top: 0%;}
+}
+
+.blue {
+  background-color: blue;
+}
+
+.red {
+  background-color: red;
+}
+
+
+/* column-top is table row of clickable areas for each column */
+
+#column-top td {
+  border: dashed 1px lightgray;
+}
+
+#column-top td:hover {
+  background-color: lightGray;
+  border-radius: 50%;
+  border: solid 1px lightgray;
+}
+
+button {
+  margin-top: 40px;
+  margin-left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: x-large;
+  border-radius: 10px;
+  width: 385px;
+  background-color: rgb(178, 168, 168)
+}
+
+#winMsg {
+  position: absolute;
+  font-size: 500%;
+}
